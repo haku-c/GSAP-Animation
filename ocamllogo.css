@@ -1,0 +1,18 @@
+#container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.camel_outline {
+  stroke-width: 10px;
+  stroke-dasharray: 603.7567749023438;
+  stroke-dashoffset: 603.7567749023438;
+  animation: dash 5s linear forwards;
+}
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: 0;
+  }
+}

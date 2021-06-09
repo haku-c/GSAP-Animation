@@ -111,11 +111,29 @@ acAnimated.animateChar1 = function (char) {
   });
   return timeline;
 }
-acAnimated.animateChar2 = function (char) {
+acAnimated.animateCharBounce = function (char, time) {
   var timeline = new TimelineMax({});
-  timeline.from(char, 0.3, {
+  timeline.from(char, {
     opacity: 0,
-    y: -90
+    y: -100,
+    duration: time
+  });
+  timeline.to(char, {
+    y: 30,
+    duration: .1
+  });
+  timeline.to(char, {
+    y: 0,
+    duration: .15
+  });
+  return timeline;
+}
+acAnimated.animateCharNoBounce = function (char, time) {
+  var timeline = new TimelineMax({});
+  timeline.from(char, {
+    opacity: 0,
+    y: -100,
+    duration: time
   });
   return timeline;
 }
@@ -129,10 +147,13 @@ for (var i = 0; i <= splitText.chars.length - 1; i++) {
   var char = splitText.chars[i];
   //adds animations in a random order
   //timeline.add("animated_char_" + String(i), acAnimated.randomNumber(1, 20)/ 10);
-  timeline.add(acAnimated.animateChar2(char), "animated_char_" + String(i));
+  var time = .3 - .02 * i
+  if (i <= 4) {
+    timeline.add(acAnimated.animateCharBounce(char, time), "animated_char_" + String(i))
+  } else { timeline.add(acAnimated.animateCharBounce(char, time), "animated_char_" + String(i)) }
 }
 timeline.paused(true);
 timeline.play();
-timeline.to(".text h1", {
+timeline.to(".text h1", 0.6, {
   opacity: 0
 });
