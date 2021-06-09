@@ -119,7 +119,7 @@ acAnimated.animateChar2 = function (char) {
   });
   return timeline;
 }
-var text = document.body.querySelector(".preloader h1");
+var text = document.body.querySelector(".text h1");
 var splitText = acAnimated.Plugins.SplitText(text, {
   words: 1, chars: 1, spacing: 10
 });
@@ -133,6 +133,6 @@ for (var i = 0; i <= splitText.chars.length - 1; i++) {
 }
 timeline.paused(true);
 timeline.play();
-timeline.to(".preloader h1", {
+timeline.to(".text h1", {
   opacity: 0
 });
