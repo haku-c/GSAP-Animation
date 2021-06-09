@@ -4,11 +4,40 @@
   align-items: center;
 }
 
-.camel_outline {
-  stroke-width: 10px;
+/* .camel_outline {
+  stroke:orange;
+  stroke-width: 3px;
   stroke-dasharray: 603.7567749023438;
   stroke-dashoffset: 603.7567749023438;
+  animation: dash 2.5s linear forwards;
+} */
+/* .b1{
+  stroke:#000000;
+  stroke-width: 5px;
+  stroke-dasharray: 153.227783203125;
+  stroke-dashoffset: 153.227783203125;
   animation: dash 5s linear forwards;
+} */
+.front_legs{
+  stroke:orange;
+  stroke-width: 3px;
+  stroke-dasharray: 153.227783203125;
+  stroke-dashoffset: 153.227783203125;
+  animation: dash 2s linear forwards;
+}
+.border{
+  stroke:orange;
+  stroke-width: 3px;
+  stroke-dasharray: 774.1282958984375;
+  stroke-dashoffset: 774.1282958984375;
+  animation: dash 2.5s linear forwards;
+}
+.back_legs{
+  stroke:orange;
+  stroke-width: 3px;
+  stroke-dasharray: 162.870849609375;
+  stroke-dashoffset: 162.870849609375;
+  animation: dash 2s linear forwards;
 }
 
 @keyframes dash {

@@ -1,3 +1,15 @@
 var path = document.querySelector('.camel_outline');
 var length = path.getTotalLength();
-console.log(length)
+console.log("outline " + length)
+var pathb1 = document.querySelector('.b1');
+var lengthb1 = pathb1.getTotalLength();
+console.log("b1 " + lengthb1)
+var pathb2 = document.querySelector('.front_legs');
+var lengthb2 = pathb2.getTotalLength();
+console.log("front_legs " + lengthb2)
+var pathb3 = document.querySelector('.border');
+var lengthb3 = pathb3.getTotalLength();
+console.log("border " + lengthb3)
+var pathb4 = document.querySelector('.back_legs');
+var lengthb4 = pathb4.getTotalLength();
+console.log("back_legs " + lengthb4)
