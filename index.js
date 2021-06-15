@@ -116,15 +116,18 @@ acAnimated.animateCharBounce = function (char, time) {
   timeline.from(char, {
     opacity: 0,
     y: -100,
-    duration: time
+    duration: time,
+    ease: "power1"
   });
   timeline.to(char, {
-    y: 30,
-    duration: .1
+    y: 20,
+    duration: .1,
+    ease: "power1"
   });
   timeline.to(char, {
     y: 0,
-    duration: .15
+    duration: .15,
+    ease: "power1"
   });
   return timeline;
 }
@@ -147,13 +150,13 @@ for (var i = 0; i <= splitText.chars.length - 1; i++) {
   var char = splitText.chars[i];
   //adds animations in a random order
   //timeline.add("animated_char_" + String(i), acAnimated.randomNumber(1, 20)/ 10);
-  var time = .3 - .02 * i
-  if (i <= 4) {
-    timeline.add(acAnimated.animateCharBounce(char, time), "animated_char_" + String(i))
-  } else { timeline.add(acAnimated.animateCharBounce(char, time), "animated_char_" + String(i)) }
+  var time = .15 - .02 * i
+  timeline.add(acAnimated.animateCharBounce(char, time), "animated_char_" + String(i))
+
 }
 timeline.paused(true);
 timeline.play();
-timeline.to(".text h1", 0.6, {
-  opacity: 0
-});
+timeline.to(".text h1", .8, {
+  opacity: 0,
+  ease: "power2x"
+}, "+=.8");
